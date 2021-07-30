@@ -6,7 +6,7 @@ def get_current_state(user_id):
         try:
             return db[user_id].decode()
         except KeyError:
-            return config.States.S_START.value
+            return config.States.Nothing.value
 
 def set_state(user_id, value):
     with Vedis(config.db_file) as db:
